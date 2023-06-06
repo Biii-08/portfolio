@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* .navigation{
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: left;
+  border-bottom: 1px solid #ddd;
+}
+
+nav .navbar{
+ align-items: flex-start;
+ margin-right: auto;
+ display: flex;
+ justify-content: flex-start;
+ 
+}
+nav .navlist{
+  color: black;
+  text-decoration: none;
+  padding: 15px;
+}
+nav .navlist:hover{
+  color:#90e0ef; 
+} */
+@layer base{
+  body{
+   @apply tracking-wide
+  }
+  h1, h2, h3, h4, h5, h6{
+    font-weight: bold
+  }
+  h1{
+    @apply text-4xl sm:text-5xl md:text-6xl
+  }
+  h2{
+    @apply text-3xl sm:text-4xl
+  }
+  li{
+    @apply cursor-pointer
+  }
+  button{
+    @apply shadow-xl shadow-gray-400 rounded-xl uppercase bg-gradient-to-r from-[#03045e] to-[#0096c7] text-white
+    
+  }
+}
