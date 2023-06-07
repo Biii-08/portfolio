@@ -2,29 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* .navigation{
-  padding: 10px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: left;
-  border-bottom: 1px solid #ddd;
+html{
+  scroll-behavior: smooth;
 }
 
-nav .navbar{
- align-items: flex-start;
- margin-right: auto;
- display: flex;
- justify-content: flex-start;
- 
-}
-nav .navlist{
-  color: black;
-  text-decoration: none;
-  padding: 15px;
-}
-nav .navlist:hover{
-  color:#90e0ef; 
-} */
 @layer base{
   body{
    @apply tracking-wide

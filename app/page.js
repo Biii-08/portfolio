@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import styles from './page.module.css'
+import styles from './globals.css'
 import Nav from '@/components/Nav'
 import About from '@/components/About'
 import Skills from '@/components/Skills'
@@ -8,6 +8,7 @@ import Projects from '@/components/Projects'
 import Contact from '@/components/Contact'
 import {AiOutlineClose,AiOutlineMail,AiOutlineMenu,AiOutlineInstagram} from 'react-icons/ai';
 import {FaGithub, FaLinkedinIn} from 'react-icons/fa';
+import Link from 'next/link'
 
 
 export default function Home() {
@@ -15,7 +16,7 @@ export default function Home() {
   <div>
     <Nav/>
 
-    <div className='w-full h-screen text-center '>
+    <div id='home' className='w-full h-screen text-center '>
         <div className='max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center  '>
             <div>
               <div className='w-[70%] h-auto m-auto flex items-center justify-center p-8 hover:scale-110  ease-in duration-300 '>
@@ -32,22 +33,29 @@ export default function Home() {
                  lorem301 is Lorem ipsum dolor sit amet, consectet      
                 </p>
                 <div className='flex items-center justify-between max-w-[330px] m-auto py-4 '>
+                  <Link href='https://www.linkedin.com'>
                   <div className='rounded-full shadow-lg shadow-gray-300 p-5 cursor-pointer hover:scale-110 ease-in duration-300'>
                     <FaLinkedinIn/>
                   </div>
-            
+                  </Link>
+
+                  <Link href='/https://github.com/Biii-08'>
                   <div className='rounded-full shadow-lg shadow-gray-300 p-5 cursor-pointer hover:scale-110 ease-in duration-300'>
                     <FaGithub/>
                   </div>
-                            
+                  </Link>
+
+                  <Link href='mailto:bibishaguragai656@gamil.com' >    
                   <div className='rounded-full shadow-lg shadow-gray-300 p-5 cursor-pointer hover:scale-110 ease-in duration-300'>
                     <AiOutlineMail/>
                   </div>
+                  </Link>  
 
+                  <Link href='https://www.instagram.com/bibisha.guragain/'>
                   <div className='rounded-full shadow-lg shadow-gray-300 p-5 cursor-pointer hover:scale-110 ease-in duration-300'>
                    <AiOutlineInstagram/>
                   </div>
-
+                  </Link>
                   
                 </div>
               
