@@ -30,7 +30,7 @@ export default function Home() {
                   A Front-End Developer
                 </h1>
                 <p className='py6-4 text-gray-600 max-w[70%] m-auto'> 
-                 lorem301 is Lorem ipsum dolor sit amet, consectet      
+                 Currently working at  <span className='text-[#2f6690] font-bold'>Veda Studios  </span>
                 </p>
                 <div className='flex items-center justify-between max-w-[330px] m-auto py-4 '>
                   <Link href='https://www.linkedin.com'>

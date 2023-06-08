@@ -14,9 +14,8 @@ const About = () => {
         </div>
         <div className='col-span-2'>
         
-        <p> i am bibisha guragain</p>
-        <p> this is about paragraph-2</p>
-        <p> this is about paragraph 3</p>
+        <p className='mb-4'> Hi, I am bibisha guragain. I am an aspiring front-end developer based in kathmandu, Nepal. I am currently working at Veda Studios, Bhaktapur. This is my portfolio. This website brielfy includes my introduction, skills, projects and a way to contact me.  I did my bachelors in Bsc Hons. Computing from Islington College, Kamalpokhari.</p>
+        <p className='mb-4'> Established in 1996, Islington College has evolved as leading brand in the field of IT and Business Education. The exceptional degree programmes are offered in direct partnership with London Metropolitan University, UK. Islington College offers Bachelors and Masters programme in Information Technology and Business Administration. They have been providing all the necessary skills that an individual requires to achieve success through an updated course that students will benefit on developing those ideas and implement in real life. Islington College endeavours their journey focusing on maximizing their potential and meeting their ambition with an assurance to enhance technical competencies among students. Thank you. bye bye.</p>
         </div>
         <div className='w-auto h-auto m-auto flex items-center justify-center p-4 hover:scale-105 ease-in duration-300 '>
             <img src='/about.png' alt='person working' ></img>

@@ -6,6 +6,7 @@ import todo from '../public/todo.png'
 import hospital from '../public/hospital.png'
 import portfolio from '../public/portfolio.png'
 
+
 const Projects = () => {
   return (
     <div id='projects' className='w-ful p-20'>
