@@ -11,51 +11,56 @@ const Nav = () => {
     const[nav,setNav] = useState(false)
 
     const handleNav = () => {
-        setNav(true)
+        setNav(!nav)
     }
 
   return (
-    <div className='fixed-w-full h-20 shadow-xl x-[100]'>
-       <div className='flex justify-between items-center w-full px-2 2xl:px-16'>
-           <image src="/images.png" alt="/" width='125' height='50'/>
+    <div className='w-full h-20 shadow-xl x--300 '>
+       <div className='flex justify-between items-center w-full px-2 2xl:px-16 font-bold'>
+           <p className='uppercase tracking-widest'> Bibisha Guragain</p>
             
             <div>
-                <ul className='hidden md:flex'>
+                <ul className='hidden md:flex '>
                     <Link href='/'>
-                        <li className='ml-10 text-sm uppercase hover:border-b'>Home </li>
+                        <li className='ml-10 text-sm  text-black hover:text-[#62b6cb] uppercase py-5 '>Home </li>
                     </Link>
                     
-                    <Link href='/'>
-                        <li className='ml-10 text-sm uppercase hover:border-b'>About </li>
+                    <Link href='/About'>
+                        <li className='ml-10 text-sm text-black hover:text-[#62b6cb] uppercase py-5'>About </li>
                          
                     </Link>
 
                     <Link href='/'>
-                        <li className='ml-10 text-sm uppercase hover:border-b'>Contact </li>
+                        <li className='ml-10 text-sm  text-black hover:text-[#62b6cb] uppercase py-5'>Contact </li>
                          
                     </Link>
 
                     <Link href='/'>
-                        <li className='ml-10 text-sm uppercase hover:border-b'>Skills </li>
+                        <li className='ml-10 text-sm  text-black hover:text-[#62b6cb] uppercase py-5'>Skills </li>
                          
+                    </Link>
+
+                    <Link href='/'>
+                        <li className='ml-10 text-sm  text-black hover:text-[#62b6cb] uppercase py-5 '>Projects </li>
                     </Link>
 
                 </ul>
                     <div onClick={handleNav} className='md:hidden'>
-                        <AiOutlineMenu size={25}/>
+                        <AiOutlineMenu size={20}/>
                     </div>
             </div>
         </div>
+        
 
         {/* if nav is true(?) then.. else(:).. */}
-        <div className={nav? 'fixed left-0 top-0 w-full h-screen bg-black/70':''}> 
+        <div className={nav? 'md:hidden fixed left-0 top-0 w-full h-screen bg-black/70':''}> 
+
             <div className={nav
                                 ?'fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-{45%] h-screen bg-white p-10 ease-in duration-500'
-                                :'fixed left-[-100%] top-0 ease-in duration-500'}>
+                                :'fixed left-[-300%] top-0 ease-in duration-500'}>
                 <div>
                     <div className='flex w-full items-center justify-between'>
-                        <image src="/images.png" alt="/" width='87' height='35'/>      
-                        <div onClick={handleNav} className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer'>
+                        <div onClick={handleNav} className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-110'>
                             <AiOutlineClose/>
                         </div> 
                     </div>
@@ -69,19 +74,23 @@ const Nav = () => {
                 <div className='py-4 flex flex-col'>
                     <ul className='uppercase'>
                         <Link href='/'>
-                            <li className='py-4 text-sm' > Home </li>
+                            <li className='py-4 text-sm  text-black hover:text-[#62b6cb]' > Home </li>
                         </Link>
 
                         <Link href='/'>
-                            <li className='py-4 text-sm' > About </li>
+                            <li className='py-4 text-sm  text-black hover:text-[#62b6cb]'  > About </li>
                         </Link> 
 
                         <Link href='/'>
-                            <li className='py-4 text-sm' > Contact </li>
+                            <li className='py-4 text-sm  text-black hover:text-[#62b6cb]' > Contact </li>
                         </Link>
 
                         <Link href='/'>
-                            <li className='py-4 text-sm' > Skills </li>
+                            <li className='py-4 text-sm  text-black hover:text-[#62b6cb]' > Skills </li>
+                        </Link>
+
+                        <Link href='/'>
+                            <li className='py-4 text-sm  text-black hover:text-[#62b6cb]' > Projects </li>
                         </Link>
                     </ul>
 
@@ -89,19 +98,19 @@ const Nav = () => {
                         <p className='uppercase tracking-widest text-[#5651e5]'> Lets connect</p>
 
                         <div className='flex items-center justify-between my-4 w-full sm:w-[80%]'>
-                            <div className='rounded-full shadow-lg shadow-gray-100 p-3 cursor-pointer hover:scale-105 ease-in duration-300'>
+                            <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-110 ease-in duration-300'>
                                 <FaLinkedinIn/>
                             </div>
 
-                            <div className='rounded-full shadow-lg shadow-gray-100 p-3 cursor-pointer hover:scale-105 ease-in duration-300'>
+                            <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-110 ease-in duration-300'>
                                 <FaGithub/>
                             </div>
                             
-                            <div className='rounded-full shadow-lg shadow-gray-100 p-3 cursor-pointer hover:scale-105 ease-in duration-300'>
+                            <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-110 ease-in duration-300'>
                                 <AiOutlineMail/>
                             </div>
 
-                            <div className='rounded-full shadow-lg shadow-gray-100 p-3 cursor-pointer hover:scale-105 ease-in duration-300'>
+                            <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-110 ease-in duration-300'>
                                 <AiOutlineInstagram/>
                             </div>
 
