@@ -1,22 +1,38 @@
 
-import Image from 'next/image';
+import { motion } from "framer-motion"
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu, AiOutlineInstagram} from 'react-icons/ai';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import './nav.css'
 
-
+// import { useRouter } from 'next/router';
 
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const [shadow, setShadow] = useState(false);
-  const [navBg, setNavBg] = useState('#ecf0f3');
-  
+  const [linkColor, setLinkColor] = useState('#1f2937');
 
   const handleNav = () => {
     setNav(!nav);
   };
+  const animation = {
+    hidden: {
+      opacity: 0,
+      y: -50,
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: 'spring',
+        stiffness: 80,
+        delay: 0.4,
+      },
+    },
+  };
+  
 
   useEffect(() => {
     const handleShadow = () => {
@@ -30,34 +46,38 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div 
-    style={{ backgroundColor: `${navBg}` }}
+    <motion.div 
+    variants={animation}
+    initial="hidden"
+    animate="show"
+    style={{ backgroundColor: 'white' }}
     className= {shadow? ' fixed w-full h-20 shadow-xl z-[100]' : ' fixed w-full h-20 z-[100]'}>
+      <div className="absolute w-[50%] inset-0 gradient " />
       <div className='flex justify-between items-center w-full px-2 2xl:px-16  pl-9'>
-          <p className='uppercase tracking-widest text-[#2f6690] font-bold'> Bibisha Guragain</p>
+          <p className='uppercase tracking-widest z-[200] font-bold'> Bibisha Guragain</p>
                 
            <div>
                <ul className='hidden md:flex '>
                    <Link href='/'>
-                       <li className='ml-10 text-sm  text-black hover:text-[#62b6cb] uppercase py-6'>Home </li>
+                       <li className='ml-10 text-sm   hover:text-[#62b6cb] uppercase py-6'>Home </li>
                    </Link>
                         
                    <Link href='/#about'>
-                       <li className='ml-10 text-sm text-black hover:text-[#62b6cb] uppercase py-6'>About </li>
+                       <li className='ml-10 text-sm  hover:text-[#62b6cb] uppercase py-6'>About </li>
                              
                    </Link>
     
                    <Link href='/#skills'>
-                       <li className='ml-10 text-sm  text-black hover:text-[#62b6cb] uppercase py-6'>Skills </li>
+                       <li className='ml-10 text-sm  hover:text-[#62b6cb] uppercase py-6'>Skills </li>
                              
                    </Link>
     
                    <Link href='/#projects'>
-                       <li className='ml-10 text-sm  text-black hover:text-[#62b6cb] uppercase py-6 '>Projects </li>
+                       <li className='ml-10 text-sm  hover:text-[#62b6cb] uppercase py-6 '>Projects </li>
                    </Link>
     
                    <Link href='/#contact'>
-                       <li className='ml-10 text-sm  text-black hover:text-[#62b6cb] uppercase py-6 pr-8 '>Contact Me </li>
+                       <li className='ml-10 text-sm  hover:text-[#62b6cb] uppercase py-6 pr-8 '>Contact Me </li>
                              
                    </Link>
     
@@ -91,7 +111,7 @@ const Navbar = () => {
               </Link>
               <div
                 onClick={handleNav}
-                className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-110 ease-in duration-300'
+                className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer'
               >
                 <AiOutlineClose />
               </div>
@@ -105,28 +125,28 @@ const Navbar = () => {
           <div className='py-4 flex flex-col'>
             <ul className='uppercase'>
               <Link href='/'>
-                <li onClick={() => setNav(false)} className='py-4 text-sm  text-black hover:text-[#62b6cb] '>
+                <li onClick={() => setNav(false)} className='py-4 text-sm'>
                   Home
                 </li>
               </Link>
               <Link href='/#about'>
-                <li onClick={() => setNav(false)} className='py-4 text-sm  text-black hover:text-[#62b6cb] '>
+                <li onClick={() => setNav(false)} className='py-4 text-sm'>
                   About
                 </li>
               </Link>
               <Link href='/#skills'>
-                <li onClick={() => setNav(false)} className='py-4 text-sm  text-black hover:text-[#62b6cb] '>
+                <li onClick={() => setNav(false)} className='py-4 text-sm'>
                   Skills
                 </li>
               </Link>
               <Link href='/#projects'>
-                <li onClick={() => setNav(false)} className='py-4 text-sm  text-black hover:text-[#62b6cb] '>
+                <li onClick={() => setNav(false)} className='py-4 text-sm'>
                   Projects
                 </li>
               </Link>
               
               <Link href='/#contact'>
-                <li onClick={() => setNav(false)} className='py-4 text-sm  text-black hover:text-[#62b6cb] '>
+                <li onClick={() => setNav(false)} className='py-4 text-sm'>
                   Contact
                 </li>
               </Link>
@@ -176,7 +196,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

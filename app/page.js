@@ -6,22 +6,51 @@ import About from '@/components/About'
 import Skills from '@/components/Skills'
 import Projects from '@/components/Projects'
 import Contact from '@/components/Contact'
-import {AiOutlineClose,AiOutlineMail,AiOutlineMenu,AiOutlineInstagram} from 'react-icons/ai';
+import {AiOutlineMail,AiOutlineInstagram} from 'react-icons/ai';
 import {FaGithub, FaLinkedinIn} from 'react-icons/fa';
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 
+export const fadeIn = (direction, type, delay, duration) => ({
+  hidden: {
+    x: direction === 'left' ? 100 : direction === 'right' ? -100 : 0,
+    y: direction === 'up' ? 100 : direction === 'down' ? -100 : 0,
+    opacity: 0,
+  },
+  show: {
+    x: 0,
+    y: 0,
+    opacity: 1,
+    transition: {
+      type,
+      delay,
+      duration,
+      ease: 'easeOut',
+    },
+  },
+});
 
 export default function Home() {
   return (
-  <div>
+  <div className='bg-white text-black'>
     <Nav/>
 
-    <div id='home' className='w-full h-screen text-center bg-white'>
+    <div id='home' className='w-full h-screen text-center '>
         <div className='max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center  '>
             <div>
-              <div className='w-[70%] h-auto m-auto flex items-center justify-center p-8 hover:scale-110  ease-in duration-300 '>
+              <motion.div 
+                variants={fadeIn('down', 'tween', 0.2,1)}
+                initial='hidden'
+                whileInView='show'
+                className='w-[70%] h-auto m-auto flex items-center justify-center p-8  '>
                 <img src='/woman.png' alt='person working' ></img>
-              </div>
+              </motion.div>
+
+              <motion.div
+                  variants={fadeIn('up', 'tween', 0.2,1)}
+                  initial='hidden'
+                  whileInView='show'
+                  >
                 <p className='uppercase text-sm tracking-widest font-bold text-gray-600'> my portfolio</p>
                 <h1 className='py-4 text-gray-700'>
                    Hi, I'm <span className='text-[#2f6690] '> Bibisha </span>
@@ -59,7 +88,7 @@ export default function Home() {
                   
                 </div>
               
-
+          </motion.div>
             </div>
 
         </div>
